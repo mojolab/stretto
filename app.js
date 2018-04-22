@@ -33,7 +33,7 @@ app.io.set('authorization', function handleAuth(handshakeData, accept) {
 app.set('configDir', process.env.configDir || __dirname);
 
 // all variables to be shared throughout the app
-app.set('port', process.env.PORT || 2000);
+app.set('port', process.env.PORT || 2500);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html');
 app.set('root', __dirname);
