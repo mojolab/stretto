@@ -6,6 +6,15 @@ Stretto (previously Node Music Player)
 
 ![screenshot](https://cloud.githubusercontent.com/assets/608054/12073955/0b9a34c6-b0ef-11e5-83f5-04c6f3fed33c.png)
 
+#### This branch / इस शाखा के बारे में
+ 
+यह शाखा हमने मोजोबोल के साथ उपयोग के उद्देश्य से आरम्भ करी है 
+We have started this branch with the intention of customizing it for use as a front end for MojoBol
+(https://github.com/mojolab/mojobol)
+
+
+
+
 ### Live Demo
 You can view a version I have hosted on my personal server at [http://music.kaiserapps.com/](http://music.kaiserapps.com/).
 
