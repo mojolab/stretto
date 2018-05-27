@@ -37,7 +37,8 @@ var SongModel = Backbone.Model.extend({
     } else if (this.get('cover_location')) {
       return 'cover/' + this.attributes.cover_location;
     } else {
-      return 'https://unsplash.it/g/512?random&'+this.attributes._id;
+      //return 'https://unsplash.it/g/512?random&'+this.attributes._id;
+        return 'cover/default.png'
     }
   },
 
@@ -75,7 +76,6 @@ var SongCollection = Backbone.Collection.extend({
         if (song) {
           // set the index in the playlist
           song.attributes.index = i + 1;
-          console.log(song)
           songs.push(song);
         }
       }
