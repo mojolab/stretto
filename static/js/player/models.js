@@ -75,6 +75,7 @@ var SongCollection = Backbone.Collection.extend({
         if (song) {
           // set the index in the playlist
           song.attributes.index = i + 1;
+          console.log(song)
           songs.push(song);
         }
       }
