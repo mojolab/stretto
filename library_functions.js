@@ -132,14 +132,15 @@ function findSong(relative_location, callback) {
             if (err.toString().indexOf('Could not find metadata header') > 0 &&
                 util.contains(song_extensions, ext)) {
               console.log('Could not find metadata. Adding the song by filename.');
-
+            var filename=relative_location.substr(relative_location.lastIndexOf(path.sep) + 1, relative_location.length)
+            console.log(filename.split("-"))
               // create a song with the filename as the title
               song = {
-                title: relative_location.substr(relative_location.lastIndexOf(path.sep) + 1, relative_location.length),
-                album: 'Unknown (no tags)',
-                artist: 'Unknown (no tags)',
-                albumartist: 'Unknown (no tags)',
-                display_artist: 'Unknown (no tags)',
+                title: filename.split("-")[1],
+                album: filename.split("-")[2]+"-"+filename.split("-")[3]+"-"+filename.split("-")[4]+"-"+filename.split("-")[5],
+                artist: filename.split("-")[1],
+                albumartist: filename.split("-")[2],
+                display_artist: filename.split("-")[1],
                 genre: 'Unknown',
                 year: 'Unknown',
                 disc: 0,
@@ -379,9 +380,11 @@ exports.scanLibrary = function(hard) {
         findNextSong();
       });
     } else {
+        
       song_list = stripped;
       findNextSong();
     }
+   
   });
 
   running = true;

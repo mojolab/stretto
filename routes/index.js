@@ -345,12 +345,11 @@ function rescanItem(req) {
   var songLocArr = [];
   app.db.songs.find({ _id: { $in: items }}, function(err, songs) {
     if (!err && songs)
-
+        
         // add the location to the list of songs to scan
       for (var i = 0; i < songs.length; i++) {
         songLocArr.push(songs[i].location);
       }
-
     lib_func.scanItems(songLocArr);
   });
 }

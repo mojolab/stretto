@@ -50,7 +50,7 @@ var updateMask = function(messenger, message) {
 
 var SCMessenger = null;
 socket.on('sc_update', function(data) {
-  console.log(data);
+  //console.log(data);
   if (data.type == 'started') {
     SCMessenger = Messenger().post('Starting download from SoundCloud of ' + data.count + ' tracks' + (data.not_streamable > 0 ? ' (' + data.not_streamable + ' not streamable)' : ''));
   } else if (data.type == 'added') {
@@ -148,7 +148,6 @@ socket.on('song_update', function(data) {
 var ScanMessenger = null;
 var ScanTemplate = 'Scanned {{completed}} out of {{count}}{% if details %}: {{details}}{% endif %}';
 socket.on('scan_update', function(data) {
-  console.log(data);
   if (ScanMessenger === null) {
     ScanMessenger = Messenger().post(swig.render(ScanTemplate, {locals: data}));
   } else {
@@ -158,11 +157,14 @@ socket.on('scan_update', function(data) {
   // do we need to remove it first?
   if (data.type == 'update') {
     // remove the track
-    player.song_collection.remove(player.song_collection.where({_id: data.doc._id}));
+     //console.log(data)
+    
+     
+     //issue # //player.song_collection.remove(player.song_collection.where({_id: data.doc._id}));
   }
 
   // add the track
-  player.song_collection.add(data.doc);
+  //player.song_collection.add(data.doc);
 
   // add the id to the library
   if (data.type == 'add') {
